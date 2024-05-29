@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coderfox</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
+    <link rel="stylesheet" href="Stylesheet/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto Sans">
+</head>
+<body>
+    <div class="row">
+        <div class="col-3">
+            <nav>
+                <img src="Img/dfcade804c473bc30cf4eee80db09eb3-removebg-preview.png" alt="logo">
+                <div class="dropdown" id="dropdown">
+                    <ul>
+                        <li><a class="active" href="#">Home</a></li>
+                        <li><a href="#banner">Services</a></li>
+                        <li><a href="#reseller" >Become a reseller</a></li>
+                        <li><a href="#about_us" onclick="dissappear()">About Us</a></li>
+                        <li id="reg_log">
+                            <i class="bi bi-person-fill"></i>
+                            <a href="#" onclick="showsignup()">Register</a></li>
+                        <li id="reg_log">
+                            <i class="bi bi-person-fill"></i>
+                            <a href="#" onclick="showform()">Login</a></li>
+                    </ul>
+                </div>
+<!---Laptop navbar--->
+<div class="laptop_navbar">
+    <ul class="laptop_navbar_list">
+        <li><a class="active" href="#">Home</a></li>
+        <li><a href="#banner">Services</a></li>
+        <li><a href="#reseller" >Become a reseller</a></li>
+        <li><a href="#about_us" onclick="dissappear()">About Us</a></li>
+    </ul>
+</div>
+
+
+
+                <div id="checkbtn">
+                    <i class="bi bi-list" onclick="dropdown()" id="show"></i>
+                    <i class="bi bi-x" id="hide" onclick="hide()"></i>
+                </div>
+            </nav>
+            <header>
+                <h2>Welcome To CodeFox!</h2>
+                <div class="button">
+                    <div class="login">
+                        <a href="#">
+                        <button class="icon-btn" onclick="showform()" id="big_screeb_log"><i class="bi bi-person-fill"></i>Login/Register</button>
+                    </div>
+                    <div class="login">
+                        <a href="#pricing" style="transition: 0.5s ease-in-out;">
+                            <button class="icon-btn"><i class="bi bi-tags-fill"></i> See Pricing</button>
+                        </a>
+                    </div>
+                </div>
+            </header>
+            <article>
+                <div id="login" class="hidden">
+                    <i class="bi bi-x" id="hide" onclick="hideform()"></i>
+                    <form>
+                        <h1>Sign In here!</h1>
+                        <div class="sign-in">
+                        <h3> Ready to start the journey?</h3>
+                            <label for="uname" >Username/Phone Num:
+                            <input type="text" name="uname" required>
+                            </label>
+                            <label for="lname" >Password:
+                            <input type="password" name="pword" id="small_screen_password" required>
+                            <div class="security" style=" width: 100%;font-size: 20px; position: relative; right: -175px; top: -33px;">
+                                <i class="bi bi-eye" onclick="show_password()" id="show_password"></i>
+                                <i class="bi bi-eye-slash" style="position: relative; right: 0px; display: none;"onclick="hide_password()" id="hide_password"></i>
+                            </div>
+                            </label>
+                            <a href="#">
+                                <button type="submit"  style="margin-top:10px ;">Log In</button>
+                            </a>
+                            <a href="#" id="forget">
+                                <p>forget password</p>
+                            </a>
+                            <h4 id="newaccount">Don't have an account,click <a href="#" onclick="showsignup()">here</a></h4>
+                        </div>
+                        <h1>OR</h1>
+                        <div class="connect">
+                            <div class="soc">
+                            <button type="button"><a href="#"><i class="bi bi-facebook"></i></a></button>
+                            </div>
+                            <div class="soc">
+                                <button type="button"><a href="#"><i class="bi bi-google"></i></a></button>
+                            </div>
+            
+                        
+                        </div>
+                    </form>
+                </div>
+
+
+                <div id="signup" class="hidden">
+                    <i class="bi bi-x" id="hide" onclick="hideform()"></i>
+                    <form>
+                        <h1>Sign up here!</h1>
+                        <div class="sign-up">
+                        <h3> Ready to start the journey?</h3>
+                            <label for="uname" >First name:
+                            <input type="text" name="fname" required>
+                            </label>
+                            <label for="lname" >Last name:
+                            <input type="text" name="lname"required>
+                            </label>
+                            <label for="email" >Email:
+                            <input type="email" name="email" required>
+                            </label>
+                            <label for="pnum" >Phone No:
+                            <input type="tel" name="pnum">
+                            </label>
+                            <label for="pword" >Password:
+                            <input type="password" name="pword" id="small_screen_registration_password" required>
+                            <div class="security" style=" width: 100%;font-size: 18px; position: relative; right: -130px; top: -31px;">
+                                <i class="bi bi-eye" onclick="show_registration_password()" id="show_registration_password"></i>
+                                <i class="bi bi-eye-slash" style="position: relative; right: 0px; display: none;"onclick="hide_registration_password()" id="hide_registration_password"></i>
+                            </div>
+                            </label>
+                            <label for="pword" >Re-password:
+                            <input type="password" name="pword" required>
+                            </label>
+                            <div class="agreement">
+                            <input type="checkbox" required>
+                            <p>I agree to every terms and condition</p>
+                            </div>
+                            <a href="#">
+                                <button type="submit">Register</button>
+                            </a>
+                            <h4 id="newaccount">Already have an account, <a href="#" onclick="showform()">Log In</a></h4>
+                        </div>
+                        <h1>OR</h1>
+                        <div class="connect">
+                            <div class="soc">
+                            <button type="button"><a href="#"><i class="bi bi-facebook"></i></a></button>
+                            </div>
+                            <div class="soc">
+                                <button type="button"><a href="#"><i class="bi bi-google"></i></a></button>
+                            </div>
+            
+                        
+                        </div>
+                    </form>
+                </div>
+                <div class="questions">
+                    <div class="Automated" id="Automated1">
+                        <i class="bi bi-speedometer"></i>
+                        <div class="side">
+                            <h3>Automated</h3>
+                            <p>We offer fully automated and instant service with real-time notification features.</p>
+                        </div>
+                    </div>
+                    <div class="Automated">
+                        <i class="bi bi-pentagon-half"></i>
+                        <div class="side">
+                            <h3>Secure Payments</h3>
+                            <p>Enjoy instant and secure transaction using mobile channels(ATM,bank transfer, USSD)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="questions">
+                    <div class="Automated">
+                        <i class="bi bi-fingerprint"></i>
+                        <div class="side">
+                            <h3>User Support</h3>
+                            <p>We are dedicated to making our customer happy. We provide helpful and prompt assistance.</p>
+                        </div>
+                    </div>
+                </div>   
+            </article>
+            <!--Section-->
+            <h3 id="about_us">Services</h3><hr>
+            <section class="banner" id="banner">
+                <div class="questions">
+                    <div class="bulk" id="Automated1">
+                        <img src="Img/bulk.jpeg" alt="bulk">
+                        <div class="message">
+                            <h3>Bulk SMS</h3>
+                            <p>Send SMS to any number in Nigeria (DND Inclusive) for as low as <span>&#8358</span>2 Per Unit</p>
+                            <a href="#"><button>Read More!</button></a>
+                        </div>
+                    </div>
+                    <div class="bulk">
+                        <img src="Img/Airtime market.jpeg" alt="Airtime">
+                        <div class="message">
+                            <h3>Airtime (VTU)</h3>
+                            <p>We offer hassle free and instant airtime purchase with hug discount.</p><br>
+                            <a href="#"><button>Read More!</button></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="questions">
+                    <div class="bulk" id="data_bundle">
+                        <img src="Img/Social-Media-Marketing-02.png" alt="bulk">
+                        <div class="message">
+                            <h3>Data Bundle</h3>
+                            <p>Enjoy low data bundle rates and surf the internet as you wish!</p><br>
+                            <a href="#"><button>Read More!</button></a>
+                    </div>
+                </div>
+                </div>
+            </section>
+            <div class="plans">
+                <span>"<em> In the bustling world of comerce, where ideas take flight and ventures flourish, enterpreneurs brave the tides of uncertainty, guided by the compass of innovation. Through trials and triumphs, they navigate the seas of opportunity, seeking to carve their mark in the annals of industry. with resislience as their anchor and vision as their sail, they chart the course towards prosperity fueled by passion, integrity and the relentless pursuit of excellence."</em></span></div>
+            <section class="all-prices" id="all-prices">
+                <h3 id="about_us">About Us</h3><hr>
+                <p id="sub_head">The best Plateform For Automated VTU Services</p>
+                <p>We offer Instant Recharge Of Airtime,Databundle, CableTV(DSTV,GOTV & Startimes),Electricity Bill Payment And More</p><br>
+                <h4 id="sub_head">Why To Choose Us</h4>
+                <ul class="advantages">
+                    <li>We're Fast</li>
+                    <li>Automated services</li>
+                    <li>100% Secured</li>
+                    <li>We're Reliable</li>
+                    <li>Always Online</li>
+                    <li>24/7 Customer Support</li>
+                </ul>
+                <h3>We Provide Awesome Services</h3>
+                <p>Some tasks can be challenging, but managing payments should not be among them. with CodeFox,paying for services you love becomes effortless, whether you're at home or in the office. Enjoy total convenience, swift service delivery and seamless payment experiences all at your fingertips.
+                    <img src="./Img/home-enterprise-2.png" alt=" become an agent" id="customer_image">
+                <h3 id="reseller">Become A Reseller</h3><hr>
+                <p>Become part of our network of exceptional entrepreneurs collaborating with Codefox. Introduce the effortless "easy-payments" experience to your connections and earn commisions for every transaction you facilitate for your client. <br>
+                We provide our Referrers with top-notch referral program incentives to faster entrepreneurial and managerial skill acquisition, drive growth and development and empower students on higher education campuses and youth in the dispora. Ultimately, our goal is to promote technology adoption through the utilization of ICT tools in our society.
+                </p>
+                <!---<button type="button" id="get_started">Get Started</button>--->
+
+                <div class="price_list">
+                    <div class="pricing" id="pricing">
+                        <div class="MTN">
+                            <h3>MTN</h3>
+                            <p><span>&#8358</span>260/30days</p>
+                        </div>
+                        <p>1GB - <span>&#8358</span>260</p><br>
+                        <p>2GB - <span>&#8358</span>520</p><br>
+                        <p>3GB - <span>&#8358</span>780</p><br>
+                        <p>5GB - <span>&#8358</span>1300</p><br>
+                        <p>10GB - <span>&#8358</span>2600</p><br>
+                            <a href="#"><button onclick="buy()" id="buy_button">Buy Now</button></a>
+                    </div>
+                    <div class="pricing">
+                        <div class="zain">
+                            <h3>9Mobile</h3>
+                            <p><span>&#8358</span>920/1.5GB</p>
+                        </div>
+                        <p>500MB - <span>&#8358</span>500</p><br>
+                        <p>2GB - <span>&#8358</span>1,140</p><br>
+                        <p>3GB - <span>&#8358</span>1,380</p><br>
+                        <p>4.5GB - <span>&#8358</span>1,840</p><br>
+                        <p>11GB - <span>&#8358</span>3,680</p><br>
+                        <a href="#"><button onclick="buy()" id="buy_button">Buy Now</button></a>
+                    </div>
+                    <div class="pricing">
+                        <div class="Airtel">
+                            <h3>Airtel</h3>
+                            <p><span>&#8358</span>250/500MB</p>
+                        </div>
+                        <p>1GB - <span>&#8358</span>500</p><br>
+                        <p>2GB - <span>&#8358</span>1,000</p><br>
+                        <p>3GB - <span>&#8358</span>1,425</p><br>
+                        <p>4.5GB - <span>&#8358</span>1,900</p><br>
+                        <p>11GB - <span>&#8358</span>2,375</p><br>
+                        <a href="#"><button onclick="buy()" id="buy_button">Buy Now</button></a>
+                    </div>
+                    <div class="pricing">
+                        <div class="Glo">
+                            <h3>Glo</h3>
+                            <p><span>&#8358</span>460/1.35GB</p>
+                        </div>
+                        <p>2.9GB - <span>&#8358</span>920</p><br>
+                        <p>4.1GB - <span>&#8358</span>1,380</p><br>
+                        <p>5.2GB - <span>&#8358</span>1,840</p><br>
+                        <p>7.7GB - <span>&#8358</span>2,300</p><br>
+                        <p>13.25GB - <span>&#8358</span>3,680</p><br>
+                        <a href="#"><button onclick="buy()" id="buy_button">Buy Now</button></a>
+                    </div>
+                </div>
+            </section>
+            <div class="FAQ">
+                <h3>Frequently Asked Questions</h3>
+                <p>Do you have a question? <a href="#contact-us">Contact Us</a> or check our <a href="#Q&A">FAQ page</a></p>
+            </div>
+                <div class="question">
+                <div id="Q&A" class="questions">
+                    <div class="ques">
+                        <h3>How do i buy items on the site?</h3>
+                        <p>The first step is to selsct a date plan you want. Provide your phone number and proceed to payment.</p>
+                    </div>
+                    <div class="ques">
+                        <h3>How legit are these cheap services?</h3>
+                        <p>Our services are 100% legit. They are cheap because of our special partnership with different Telcos. We have a positive reputation that has lasted more than a decade. You can check our <span id="contact"> testimonial page</span>to view other user's comment about us.</p>
+                    </div>
+                </div>
+                <div class="questions">
+                    <div class="ques">
+                        <h3>How can i pay for Data?</h3>
+                        <p>We have integrated a secure and reliable payment gateway. You an pay with your ATM card, your bank USSD code or transfer directly from your bank account(instant verification).</p>
+                    </div>
+                    <div class="ques">
+                        <h3>What are your opening hours?When are your services available?</h3>
+                        <p>All our product are available 24/7,but our customer support is available as follows: Mon Sat:8am - 8pm,Sunday: 1pm - 8pm.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="partner">
+                <h3>Our Partners</h3>
+                <img src="Img/partner.jpeg" alt="partners">
+            </div>
+            <div class="contact" id="contact-us">
+                <h3>Contacts Us Now!</h3>
+                <div class="option">
+                    <div class="whatapp">
+                        <a href="https://wa.me/+2348060420564"> <button type="button"><i class="bi bi-whatsapp"></i>Chat with us on Whatsapp</button></a>
+                    </div>
+                    <div class="whatapp">
+                        <a href="tel:+2348060420564"> <button type="button"><i class="bi bi-telephone-fill"></i> Call us on phone: 08060420564</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="forms">
+                <p>Would you like to reach out to us? Fill the form below!</p>
+            </div>
+            <div class="form">
+                <label for="fname">
+                <input type="text" name="fname" placeholder="First name">
+                </label>
+                <label for="Telcos">
+                <input type="tel" name="Telcos" placeholder="Phone num">
+                </label>
+                <label for="message">
+                <textarea name="message" id="message"  placeholder="Your message"cols="40" rows="10"></textarea>
+                </label>
+                <a href="#">
+                    <button type="submit"><i class="bi bi-send"></i>Send Message</button>
+                </a>
+            </div>
+            <footer>
+                <div class="logo">
+                    <p><span>&copy;</span>2024 codefox</p>
+                </div>
+                <div class="services">
+                    <h3>Services</h3>
+                <ul class="footer_decription">
+                    <li>Mobile data</li>
+                    <li>Airtime (VTU top-up)</li>
+                    <li>Pay TV subscriptions</li>
+                    <li>Electricity bill payment</li>
+                </ul>
+                </div>
+                <div class="services">
+                    <h3>About</h3>
+                <ul class="footer_decription">
+                    <li>Reseller Login</li>
+                    <li>Become a Reseller</li>
+                    <li>Privacy</li>
+                    <li>Terms</li>
+                </ul>
+                </div>
+            </footer>
+            <script src="javascript/script.js"></script>
+            </div>
+        </div>
+        <!-- sidebar -->
+        <div class="sidebar">
+            <form action="https://www.google.com/search" method="POST" target="_blank" class="header-sidebar">
+                <div class="search">
+                    <i class="bi bi-search"></i>
+                    <input type="search" name="search" placeholder="search">
+                </div>
+                <button type="submit">Go</button>
+            </form> 
+
+            <video autoplay loop muted src="Get 50GB Data and 50% recharge bonus on myMTN NG App.mp4" width="350" height="auto" id="advert"></video>
+            <div id="bigscreen-login" class="bigscreen-hidden">
+            <form>
+                <div class="sign_in_form">
+                    <h1>Sign In here!</h1>
+                    <div class="bigscreensign-in">
+                        <h3> Ready to start the journey?</h3>
+                        <label for="uname" >Username/Phone Num:
+                        <input type="text" name="uname" required>
+                        </label>
+                        <label for="pname" >Password:
+                        <input type="password" name="pword" id="pword" required>
+                        <div class="big_screen_security">
+                            <i class="bi bi-eye-slash" id="hide_eye" onclick="hide_eye()"></i>
+                            <i class="bi bi-eye" id="show_eye" onclick="show_eye()" style="display: none;"></i>
+                        </div>
+                        </label>
+                        <a href="#">
+                            <button type="submit" id="login_btn">Log In</button>
+                        </a>
+                        <a href="#" id="forget">
+                            <p>forget password</p>
+                        </a>
+                        <h4 id="newaccount">Don't have an account,click <a href="#" onclick="signup()">here</a></h4>
+                    </div>
+                    <h1>OR</h1>
+                    <div class="connect">
+                        <div class="soc">
+                        <button type="button" id="soc_btn"><a href="#"><i class="bi bi-facebook"></i></a></button>
+                        </div>
+                        <div class="soc">
+                            <button type="button" id="soc_btn"><a href="#"><i class="bi bi-google" style="color: red;"></i></a></button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            </div>
+
+            <div class="sign_in_form">
+                <div id="bigscreen-signup" class="bigscreen-hidden">
+                <form>
+                    <h1>Sign up here!</h1>
+                    <div class="sign-up">
+                    <h3> Ready to start the journey?</h3>
+                        <label for="uname" >First name:
+                        <input type="text" name="fname" required>
+                        </label>
+                        <label for="lname" >Last name:
+                        <input type="text" name="lname"required>
+                        </label>
+                        <label for="email" >Email:
+                        <input type="email" name="email" required>
+                        </label>
+                        <label for="pnum" >Phone No:
+                        <input type="tel" name="pnum">
+                        </label>
+                        <label for="pword" >Password:
+                        <input type="password" name="pword" id="passwod" required>
+                        <div class="big_screen_registration_security">
+                            <i class="bi bi-eye-slash" id="signup_hideeye" onclick="signup_hideeye()" style="display: none;"></i>
+                            <i class="bi bi-eye" id="signup_showeye" onclick="signup_showeye()"></i>
+                        </div>
+                        </label>
+                        <label for="pword" >Re-password:
+                        <input type="password" name="pword" id="passwod"  required>
+                        </label>
+                        <div class="agreement">
+                        <input type="checkbox" required>
+                        <p>I agree to every terms and condition</p>
+                        </div>
+                        <a href="#">
+                            <button type="submit" id="registration">Register</button>
+                        </a>
+                        <h4 id="newaccount">Already have an account, <a href="#" onclick="hidesign_up()">Log In</a></h4>
+                    </div>
+                    <h1>OR</h1>
+                    <div class="connect">
+                        <div class="soc">
+                        <button type="button"><a href="#"><i class="bi bi-facebook"></i></a></button>
+                        </div>
+                        <div class="soc">
+                            <button type="button"><a href="#"><i class="bi bi-google" style="color: red;"></i></a></button>
+                        </div>
+                    </div>
+                </form>
+                </div>
+            </div>
+
+
+            <div class="social-media">
+            <div class="one">
+            <a href="https://www.facebook.com/your-page" target="_blank"><i class="bi bi-facebook"><span>Facebook</span></i></a><br>
+            </div>
+            <div class="one">
+            <a href="https://twitter.com/your-account" target="_blank"><i class="bi bi-twitter"><span>Twitter</span></i></a><br>
+            </div>
+            <div class="one">
+            <a href="https://www.Whatsapp.com/your-account" target="_blank"><i class="bi bi-whatsapp"><span>Whatsapp</span></i></a><br>
+            </div>
+        </div>
+    </div>   
+</body>
+</html>
